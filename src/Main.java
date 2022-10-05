@@ -43,17 +43,13 @@ public class Main {
         robotBear.charge();
 
         //functional interface example
-//        double price = robotBear.setPrice(450.00);
-//        ProductPrice lambdaProductPrice = () -> System.out.println("Product Price is: R"  + price);
-//
-//        ProductPrice innerClassProductPrice = new ProductPrice() {
-//            @Override
-//            public void setProductPrice() {
-//                double newPrice = robotBear.setPrice(560.00);
-//            }
-//        };
-//
-//        robotBear.getPrice(() -> System.out.println("New robot bear price is: R" + price);
-//        robotBear.getPrice(innerClassProductPrice);
+        ProductPrice productPrice = new ProductPrice() {
+            @Override
+            public void setProductPrice() {
+                System.out.println("Setting the product price using native implementation of interface");
+            }
+        };
+
+        ProductPrice productPrice1 = () -> System.out.println("Setting the products new price using lambda expression");
     }
 }
